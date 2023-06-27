@@ -1,0 +1,14 @@
+.header {
+    padding-top: 1.75rem;
+
+    &__nav {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+        &--logo {
+            width: 2.81106rem;
+            height: 1.75rem;
+        }
+    }
+}

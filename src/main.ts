@@ -3,8 +3,14 @@ import "@fontsource/inter/700.css"
 import "@fontsource/inter/800.css"
 import './styles/styles.scss'
 
-document.querySelector<HTMLDivElement>('#app')!.innerHTML = `
-  <div>
-    Welcome to my project
-  </div>
-`
+import Header from "./components/Header";
+
+const appElement = document.querySelector<HTMLDivElement>('#app')
+
+if (appElement) {
+  const headerComponent = await Header()
+  appElement.appendChild(headerComponent)
+}
+
+const header = document.querySelector<HTMLUListElement>('header')
+header?.classList.add('container')

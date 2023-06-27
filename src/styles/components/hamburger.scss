@@ -1,0 +1,38 @@
+@use '../base/variables' as *;
+
+.hamburger {
+    display: none;
+    background: linear-gradient(to left, $dark-space-blue 16rem, rgba(0, 0, 26, 0.5)6rem);
+
+.hamburger__menu {
+    margin-left: calc(100vw - 16rem);
+    display: flex;
+    flex-direction: column;
+    gap: 5.39rem;
+    width: 16rem;
+    height: 100vh;
+    padding: 1.71rem 1.3rem 0 1.5rem;
+    background-color: $almost-white;
+    
+
+    &--close {
+        width: 1.90038rem;
+        height: 1.90038rem;
+        align-self: flex-end;
+    }
+
+    &--items {
+        font-size: 1.125rem;
+        line-height: 1.5rem;
+        
+        li {
+            margin-bottom: 1.5rem;
+            a {
+                color: $dark-space-blue;
+                cursor: pointer; 
+            }
+        }
+    }
+}
+
+}

@@ -1,0 +1,63 @@
+{
+    "header": {
+        "logo" : "/images/logo.svg",
+        "menuIcon": "/images/icon-menu.svg",
+        "menuClose": "/images/icon-menu-close.svg",
+        "menuItems": [
+            { "item": "Home", "link": "#" },
+            { "item": "New", "link": "#" },
+            { "item": "Popular", "link": "#" },
+            { "item": "Trending", "link": "#" },
+            { "item": "Categories", "link": "#" }
+        ]
+    },
+    "main": {
+        "hero": {
+            "banner": [
+                { "desktop": "/images/image-web-3-desktop.jpg" },
+                { "mobile": "/images/image-web-3-mobile.jpg"}
+            ],
+            "heading": "The Bright Future of Web 3.0",
+            "description": "We dive into the next evolution of the web that claims to put the power of the platforms back into the hands of the people. But is it really fulfilling its promise?",
+            "CTA": "Read more"
+        },
+        "newspace": {
+            "newItems": {
+                "Item1": [
+                    { "heading": "Hydrogen VS Electric Cars" },
+                    { "description": "Will hydrogen-fueled cars ever catch up to EVs?" }
+                ],
+                "Item2": [
+                    { "heading": "The Downsides of AI Artistry" },
+                    { "description": "What are the possible adverse effects of on-demand AI image generation?" }
+                ],
+                "Item3": [
+                    { "heading": "Is VC Funding Drying Up?" },
+                    { "description": "Private funding by VC firms is down 50% YOY. We take a look at what that means." }
+                ]
+            }
+        },
+        "related": {
+            "newsList": {
+                "List01": [
+                    { "image": "/images/image-retro-pcs.jpg", "alt": "Reviving Retro PCs"},
+                    { "num": "01"},
+                    { "title": "Reviving Retro PCs"},
+                    { "description": "What happens when old PCs are given modern upgrades?" }
+                ],
+                "List02": [
+                    { "image": "/images/image-top-laptops.jpg", "alt": "Top 10 laptops of 2022"},
+                    { "num": "02"},
+                    { "title": "Top 10 Laptops of 2022"},
+                    { "description": "Our best picks for various needs and budgets." }
+                ],
+                "List03": [
+                    { "image": "/images/image-gaming-growth.jpg", "alt": "The Growth of Gaming"},
+                    { "num": "03"},
+                    { "title": "The Growth of Gaming"},
+                    { "description": "How the pandemic has sparked fresh opportunities." }
+                ]
+            }
+        }
+    }
+}
