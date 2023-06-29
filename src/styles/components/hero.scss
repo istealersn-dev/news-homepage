@@ -1,0 +1,47 @@
+@use '../base/typography' as *;
+@use '../misc/mixins.scss' as *;
+@use '../base/variables' as *;
+
+.hero {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+    margin-top: 2rem;
+
+    &__banner {
+        object-fit: contain;
+    }
+
+    &__content {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 1rem;
+
+        & > h1 {
+            color: $dark-space-blue;
+            @each $property, $value in map-get($h1, mobile) {
+                #{$property}: $value;
+            }
+                @include respondto('lg') {
+                    @each $property, $value in map-get($h1, desktop) {
+                        #{$property}: $value;
+                }
+            }
+        }
+
+        &--desc {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 1.5rem;
+
+            & > p {
+                color: $gunmetal;
+                @each $property, $value in $body {
+                    #{$property}: $value;
+                }
+            }
+        }
+
+    }
+
+}

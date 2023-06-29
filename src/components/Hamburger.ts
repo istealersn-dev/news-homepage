@@ -1,6 +1,6 @@
-import { fetchHeaderData } from "../services/dataService";
+import { HeaderData } from "../types";
 
-const Hamburger = async (): Promise<HTMLElement> => {
+const Hamburger = ({menuClose, menuItems }: HeaderData) => {
 
     const hamburger = document.createElement('div');
     hamburger.classList.add('hamburger');
@@ -11,16 +11,14 @@ const Hamburger = async (): Promise<HTMLElement> => {
     const close = document.createElement('img');
     close.classList.add('hamburger__menu--close')
 
-    const menuItems = document.createElement('ul');
-    menuItems.classList.add('hamburger__menu--items');
+    const ulItems = document.createElement('ul');
+    ulItems.classList.add('hamburger__menu--items');
     
-    try {
-        const { menuClose, menuItems: data } = await fetchHeaderData();
-
-        close.src = menuClose
+        close.src = menuClose ? menuClose : ''
         hamburgerMenu.appendChild(close)
 
-        data.forEach( menuItem => {
+        if (menuItems) {
+            menuItems.forEach( menuItem => {
             const listItem = document.createElement('li')
             const listLink = document.createElement('a')
 
@@ -28,13 +26,10 @@ const Hamburger = async (): Promise<HTMLElement> => {
             listLink.textContent = menuItem.item
 
             listItem.appendChild(listLink)
-            menuItems.appendChild(listItem)
-        })
-    } catch (error) {
-        console.error('There was a problem rendering Hamburger', error)
-    }
+            ulItems.appendChild(listItem)
+        })} else ''
 
-    hamburgerMenu.appendChild(menuItems)
+    hamburgerMenu.appendChild(ulItems)
     hamburger.appendChild(hamburgerMenu)
 
     return hamburger

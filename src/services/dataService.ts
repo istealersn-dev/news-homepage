@@ -1,13 +1,13 @@
-import { HeaderData } from "../types";
+const dataUrl = '/data/homepage.json'
 
-export async function fetchHeaderData(): Promise<HeaderData> {
-
+export async function fetchData(): Promise<any> {
     try {
-        const response = await fetch('/data/homepage.json')
+        const response = await fetch(dataUrl)
         const data = await response.json()
-        return data.header;
+        return data
     } catch (error) {
         console.error('There was a problem fetching data', error)
-        return {} as HeaderData
+        throw(error)
     }
 }
+

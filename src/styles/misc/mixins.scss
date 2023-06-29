@@ -1,0 +1,15 @@
+@use '../base/breakpoints.scss' as *;
+
+// Breakpoint mixins
+
+@mixin respondto($name) {
+    @if map-has-key($breakpoints, $name) {
+        @media #{inspect(map-get($breakpoints, $name))} {
+            @content;
+        }
+    }
+
+    @else {
+        @warn "Invalid value, as it does not exist in `#{$breakpoints}`."
+    }
+}
