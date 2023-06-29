@@ -12,9 +12,16 @@ $extraBold: 800;
 $para: .9375rem;
 
 $h1: (
-    font-size: 3rem,
-    font-weight: $extraBold,
-    line-height: 3.5rem
+    mobile: (
+        font-size: 2.5rem,
+        font-weight: $extraBold,
+        line-height: 2.5rem
+    ),
+    desktop: (
+        font-size: 3.5rem,
+        font-weight: $extraBold,
+        line-height: 3.5rem
+    )
 );
 
 $h2: (
@@ -37,7 +44,8 @@ $h4: (
 
 $body: (
     font-size: $para,
-    line-height: 1.625rem
+    line-height: 1.625rem,
+    font-weight: $medium
 );
 
 $btn: (
