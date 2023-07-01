@@ -7,12 +7,6 @@ export interface Banner {
     desktop: string
     mobile: string
 }
-
-interface NewItem {
-    heading: string
-    description: string
-}
-
 export interface ListItem {
     image: string
     num: string
@@ -21,10 +15,10 @@ export interface ListItem {
 }
 
 export interface HeaderData {
-    logo?: string
-    menuIcon?: string
-    menuClose?: string
-    menuItems?: MenuItem[]
+    logo: string
+    menuIcon: string
+    menuClose: string
+    menuItems: MenuItem[]
 }
 
 export interface HeroData {
@@ -35,9 +29,22 @@ export interface HeroData {
 }
 
 export interface NewSpace {
-    newItems: NewItem[]
+    heading: string
+    newItems: NewsItem[]
+}
+
+export interface RelatedData {
+    newsList: NewsList[]
 }
 
 export interface NewsList {
-    newsList: ListItem[]
+    image: string
+    alt: string
+    newsItem: NewsItem
+}
+
+export interface NewsItem {
+    parent: string
+    heading: string
+    description: string
 }

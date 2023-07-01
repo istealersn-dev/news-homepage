@@ -1,0 +1,29 @@
+@use '../base/typography.scss' as *;
+@use '../base/variables.scss' as *;
+
+.newscard {
+    display: grid;
+    grid-template-columns: 100px 1fr;
+    align-items: center;
+    gap: 1.5rem;
+
+    &__img {
+        width: 6.25rem;
+        height: 8.0625rem;
+
+    }
+
+    &__content {
+        display: flex;
+        flex-direction: column;
+        gap: 0.75rem;
+
+        &--heading {
+            color: $silver;
+            font-weight: $bold;
+            font-size: 2rem;
+            line-height: 2rem;
+        }
+    }
+
+}

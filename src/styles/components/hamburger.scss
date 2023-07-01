@@ -2,7 +2,11 @@
 
 .hamburger {
     display: none;
-    background: linear-gradient(to left, $dark-space-blue 16rem, rgba(0, 0, 26, 0.5)6rem);
+    height: 100vh;
+    margin-left: -1rem;
+    background: linear-gradient(to left, $dark-space-blue 15rem, rgba(0, 0, 26, 0.5)6rem);
+    position: absolute;
+    inset: 0;
 
 .hamburger__menu {
     margin-left: calc(100vw - 16rem);
