@@ -3,3 +3,10 @@
     margin: auto;
     max-width: 69.375rem;
 }
+
+main {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 4rem;
+    padding-bottom: 5rem;
+}

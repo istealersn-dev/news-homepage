@@ -11,4 +11,9 @@
     @each $property, $value in $btn {
         #{$property}: $value;
     }
+
+    &:hover {
+        background-color: $dark-space-blue;
+        cursor: pointer;
+    }
 }

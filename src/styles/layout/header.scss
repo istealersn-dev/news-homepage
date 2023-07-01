@@ -1,14 +1,21 @@
 .header {
     padding-top: 1.75rem;
+    position: relative;
 
     &__nav {
         display: flex;
         justify-content: space-between;
         align-items: center;
+        transition: display 4s ease-out;
 
         &--logo {
             width: 2.81106rem;
             height: 1.75rem;
+            cursor: pointer;
         }
     }
+}
+
+.active {
+    display: block;
 }

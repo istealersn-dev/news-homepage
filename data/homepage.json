@@ -22,42 +22,52 @@
             "CTA": "Read more"
         },
         "newspace": {
-            "newItems": {
-                "Item1": [
-                    { "heading": "Hydrogen VS Electric Cars" },
-                    { "description": "Will hydrogen-fueled cars ever catch up to EVs?" }
-                ],
-                "Item2": [
-                    { "heading": "The Downsides of AI Artistry" },
-                    { "description": "What are the possible adverse effects of on-demand AI image generation?" }
-                ],
-                "Item3": [
-                    { "heading": "Is VC Funding Drying Up?" },
-                    { "description": "Private funding by VC firms is down 50% YOY. We take a look at what that means." }
-                ]
-            }
+            "heading": "New",
+            "newItems": [
+                {
+                    "heading": "Hydrogen VS Electric Cars",
+                    "description": "Will hydrogen-fueled cars ever catch up to EVs?"
+                },
+                {
+                    "heading": "The Downsides of AI Artistry" ,
+                    "description": "What are the possible adverse effects of on-demand AI image generation?"
+                },
+                {
+                    "heading": "Is VC Funding Drying Up?",
+                    "description": "Private funding by VC firms is down 50% YOY. We take a look at what that means." 
+                }
+            ]
         },
         "related": {
-            "newsList": {
-                "List01": [
-                    { "image": "/images/image-retro-pcs.jpg", "alt": "Reviving Retro PCs"},
-                    { "num": "01"},
-                    { "title": "Reviving Retro PCs"},
-                    { "description": "What happens when old PCs are given modern upgrades?" }
-                ],
-                "List02": [
-                    { "image": "/images/image-top-laptops.jpg", "alt": "Top 10 laptops of 2022"},
-                    { "num": "02"},
-                    { "title": "Top 10 Laptops of 2022"},
-                    { "description": "Our best picks for various needs and budgets." }
-                ],
-                "List03": [
-                    { "image": "/images/image-gaming-growth.jpg", "alt": "The Growth of Gaming"},
-                    { "num": "03"},
-                    { "title": "The Growth of Gaming"},
-                    { "description": "How the pandemic has sparked fresh opportunities." }
-                ]
-            }
+            "newsList": [
+                {
+                    "image": "/images/image-retro-pcs.jpg", 
+                    "alt": "Reviving Retro PCs",
+                    "newsItem": 
+                    {
+                        "heading": "Reviving Retro PCs",
+                        "description": "What happens when old PCs are given modern upgrades?"
+                    }
+                },
+                {
+                    "image": "/images/image-top-laptops.jpg", 
+                    "alt": "Top 10 laptops of 2022",
+                    "newsItem": 
+                    {
+                        "heading": "Top 10 Laptops of 2022",
+                        "description": "Our best picks for various needs and budgets."
+                    }
+                },
+                {
+                    "image": "/images/image-gaming-growth.jpg", 
+                    "alt": "The Growth of Gaming",
+                    "newsItem": 
+                    {
+                        "heading": "The Growth of Gaming",
+                        "description": "How the pandemic has sparked fresh opportunities."
+                    }
+                }
+            ]
         }
     }
 }

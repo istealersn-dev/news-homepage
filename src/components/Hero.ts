@@ -1,6 +1,6 @@
 import { HeroData } from './../types/index';
-import { Button } from './Button';
-import { Div } from "./Div"
+import { Button } from './atoms/Button';
+import { Div } from "./atoms/Div"
 
 const Hero = ({banner, heading, description, CTA}: HeroData) => {
 
@@ -25,8 +25,8 @@ const Hero = ({banner, heading, description, CTA}: HeroData) => {
     }
 
     // argument assignment as per the argument definition
-    heroHeading.innerHTML = heading ? heading : ''
-    heroDesc.innerHTML = description ? description : ''
+    heroHeading.textContent = heading ? heading : ''
+    heroDesc.textContent = description ? description : ''
 
     // Start grouping them based on the desired layout
     const divElement = Div()

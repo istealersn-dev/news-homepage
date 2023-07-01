@@ -1,0 +1,15 @@
+@use '../base/variables.scss' as *;
+@use '../base/typography.scss' as *;
+
+.newspace {
+    background-color: $dark-space-blue;
+    padding: 1.5rem 1.25rem 1.5rem 1.31rem;
+
+    &__heading {
+        font-size: 2rem;
+        font-weight: $bold;
+        line-height: 2rem;
+        color: $yellow;
+        padding-bottom: 0.25rem;
+    }
+}

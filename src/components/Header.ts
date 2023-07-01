@@ -14,14 +14,16 @@ const Header = ({logo, menuIcon}: HeaderData)  => {
 
     const mobileMenu = document.createElement("div");
     mobileMenu.classList.add("header__nav--mobile");
+    mobileMenu.setAttribute('aria-controls', "hamburger-menu")
+    mobileMenu.setAttribute('aria-label', "Toggle menu")
 
     const menuBar = document.createElement("img");
     menuBar.classList.add("header__nav--mobile-menu");
 
     mobileMenu.appendChild(menuBar);
 
-    navLogo.src = logo ? logo : ''
-    menuBar.src = menuIcon ? menuIcon : ''
+    navLogo.src = logo
+    menuBar.src = menuIcon
 
     navItems.appendChild(navLogo);
     navItems.appendChild(mobileMenu);

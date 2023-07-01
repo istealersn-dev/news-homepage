@@ -1,0 +1,51 @@
+@use '../base/variables' as *;
+@use '../base/typography' as *;
+
+// This prints the news items for NewSpace component
+.news-item {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    padding: 1.94rem 0 1.81rem;
+    border-bottom: 0.0625rem solid #5E607A;
+
+    &:last-child {
+        padding-bottom: 0;
+        border-bottom: none;
+    }
+
+    & > h2 {
+        color: $almost-white;
+        @each $property, $value in $h2 {
+            #{$property}: $value;
+        }
+    }
+}
+
+// This prints the news items for Related component
+.news-item-rel {
+    display: flex;
+    flex-direction: column;
+    gap: 0.56rem;
+
+    & > h3 {
+        color: $dark-space-blue;
+        @each $property, $value in $h3 {
+            #{$property}: $value;
+        }
+    }
+}
+
+.desc {
+    @each $property, $value in $body {
+        #{$property}: $value;
+    }
+}
+
+.silver {
+    color: $silver
+}
+
+.gunmetal {
+    color: $gunmetal;
+}

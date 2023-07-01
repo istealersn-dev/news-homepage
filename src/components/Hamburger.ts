@@ -4,6 +4,7 @@ const Hamburger = ({menuClose, menuItems }: HeaderData) => {
 
     const hamburger = document.createElement('div');
     hamburger.classList.add('hamburger');
+    hamburger.setAttribute('aria-disabled', 'true')
 
     const hamburgerMenu = document.createElement('div');
     hamburgerMenu.classList.add('hamburger__menu');
