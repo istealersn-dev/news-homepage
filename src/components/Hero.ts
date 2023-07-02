@@ -4,6 +4,8 @@ import { Div } from "./atoms/Div"
 
 const Hero = ({banner, heading, description, CTA}: HeroData) => {
 
+    let imageUrl: string
+
     // Create indiviudal HTML elements
     const section = document.createElement('section')
     const hero = Div()
@@ -17,10 +19,15 @@ const Hero = ({banner, heading, description, CTA}: HeroData) => {
     const heroDesc = document.createElement('p')
     const heroBtn = Button(CTA)
     
-    // Function to switch image for desktop vs mobile
+    const { desktop, mobile } = banner
+
+    // set default image based on viewport on the intial load
+    imageUrl = window.innerWidth > 768 ? desktop : mobile
+    image.src = imageUrl
+
+    // Function to switch image for desktop vs mobile during load/resize
     const updateImage = () => {
-        const { desktop, mobile } = banner
-        const imageUrl = window.innerWidth > 768 ? desktop : mobile
+        imageUrl = window.innerWidth > 768 ? desktop : mobile
         image.src = imageUrl
     }
 
