@@ -10,6 +10,7 @@
 
     @include respondto('lg') {
         margin-top: 0;
+        gap: 1.75rem;
     }
 
     &__banner {

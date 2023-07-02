@@ -1,5 +1,6 @@
 @use '../base/variables.scss' as *;
 @use '../base/typography.scss' as *;
+@use '../misc/mixins.scss' as *;
 
 .newspace {
     background-color: $dark-space-blue;
@@ -11,5 +12,10 @@
         line-height: 2rem;
         color: $yellow;
         padding-bottom: 0.25rem;
+
+        @include respondto('lg') {
+            font-size: 2.5rem;
+            line-height: 2.5rem;
+        }
     }
 }
