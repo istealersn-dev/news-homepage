@@ -20,6 +20,11 @@
             width: 2.81106rem;
             height: 1.75rem;
             cursor: pointer;
+
+            @include respondto('lg') {
+                width: 4.00575rem;
+                height: 2.49375rem;
+            }
         }
 
         &--hamburger {
