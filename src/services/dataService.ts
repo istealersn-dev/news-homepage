@@ -7,7 +7,7 @@ export async function fetchData(): Promise<any> {
         return data
     } catch (error) {
         console.error('There was a problem fetching data', error)
-        throw(error)
+        throw (error)
     }
 }
 

@@ -4,7 +4,7 @@ import { Headlines } from "./atoms/Headlines";
 
 let counter: number = 1
 
-export const Newscard = ({image, alt, newsItem}: NewsList ) => {
+export const Newscard = ({ image, alt, newsItem }: NewsList) => {
 
     // Create NewsCard HTML DOM structure
     const card = Div()
@@ -28,10 +28,10 @@ export const Newscard = ({image, alt, newsItem}: NewsList ) => {
     cardHeading.classList.add('newscard__content--heading')
     cardContent.appendChild(cardHeading)
 
-    const {heading, description} = newsItem
+    const { heading, description } = newsItem
     const parent = 'Newscard'
 
-    const item = Headlines({parent, heading, description})
+    const item = Headlines({ parent, heading, description })
     cardContent.appendChild(item)
 
     card.appendChild(imgParent)

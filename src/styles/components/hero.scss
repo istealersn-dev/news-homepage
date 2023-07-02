@@ -8,14 +8,24 @@
     gap: 1.5rem;
     margin-top: 2rem;
 
+    @include respondto('lg') {
+        margin-top: 0;
+    }
+
     &__banner {
         object-fit: cover;
+        max-width: 45.625rem;
     }
 
     &__content {
         display: grid;
         grid-template-columns: 1fr;
         gap: 1rem;
+
+        @include respondto('lg') {
+            grid-template-columns: repeat(2, 1fr);
+            gap: 1.875rem;
+        }
 
         & > h1 {
             color: $dark-space-blue;
@@ -33,6 +43,10 @@
             display: grid;
             grid-template-columns: 1fr;
             gap: 1.5rem;
+
+            @include respondto('lg') {
+                gap: 1.8125rem;
+            }
 
             & > p {
                 color: $gunmetal;

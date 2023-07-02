@@ -1,6 +1,8 @@
+@use '../misc/mixins.scss' as *;
+
 .container {
     width: calc(100vw - 2rem);
-    margin: auto;
+    margin: 0 auto;
     max-width: 69.375rem;
 }
 
@@ -9,4 +11,23 @@ main {
     grid-template-columns: 1fr;
     gap: 4rem;
     padding-bottom: 5rem;
+
+    @include respondto('lg') {
+        display: grid;
+        grid-template-columns: 66% 34%;
+        gap: 1.875rem;
+        padding-top: 3.4438rem;
+    }
+
+    section:nth-child(3) {
+
+        @include respondto('lg') {
+            grid-column: 1 / -1;
+            margin-top: 2.5625rem;
+    }
+    }
+}
+
+.freeze {
+    overflow: hidden;
 }

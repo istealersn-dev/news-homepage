@@ -6,12 +6,12 @@ const Hero = ({banner, heading, description, CTA}: HeroData) => {
 
     // Create indiviudal HTML elements
     const section = document.createElement('section')
-    const hero = document.createElement('div')
+    const hero = Div()
     hero.classList.add('hero')
-    const heroImg = document.createElement('div')
+    const heroImg = Div()
     heroImg.classList.add('hero__banner')
     const image = document.createElement('img')
-    const heroContent = document.createElement('div')
+    const heroContent = Div()
     heroContent.classList.add('hero__content')
     const heroHeading = document.createElement('h1')
     const heroDesc = document.createElement('p')

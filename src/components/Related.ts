@@ -2,7 +2,7 @@ import { RelatedData } from "../types"
 import { Newscard } from "./Newscard"
 import { Div } from "./atoms/Div"
 
-const Related = ({newsList}: RelatedData) => {
+const Related = ({ newsList }: RelatedData) => {
 
     const section = document.createElement('section')
     const relParent = Div()
