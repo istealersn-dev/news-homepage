@@ -10,6 +10,7 @@ const Newspace = ({ heading, newItems }: NewSpace) => {
 
    const newsSpaceHeading = document.createElement('span')
    newsSpaceHeading.textContent = heading
+   newsSpaceHeading.setAttribute("role", "heading")
    newsSpaceHeading.setAttribute("aria-level", "2")
    newsSpaceHeading.classList.add('newspace__heading')
 

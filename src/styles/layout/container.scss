@@ -14,7 +14,7 @@ main {
 
     @include respondto('lg') {
         display: grid;
-        grid-template-columns: 66% 34%;
+        grid-template-columns: 45.625rem 21.875rem;
         gap: 1.875rem;
         padding-top: 3.4438rem;
     }
