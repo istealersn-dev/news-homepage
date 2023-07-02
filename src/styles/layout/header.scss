@@ -1,3 +1,6 @@
+@use '../base/variables.scss' as *;
+@use '../base/typography.scss' as *;
+
 .header {
     padding-top: 1.75rem;
     position: relative;
@@ -12,6 +15,27 @@
             width: 2.81106rem;
             height: 1.75rem;
             cursor: pointer;
+        }
+
+        &--desktop {
+            color: $gunmetal;
+            @each $property, $value in $body {
+                #{$property}: $value;
+            }
+
+            & > ul {
+                display: flex;
+                flex-direction: row;
+                gap: 2.5rem;
+
+                & > li {
+
+                    &:hover {
+                        color: $light-vermillion;
+                        cursor: pointer;
+                    }
+                }
+            }
         }
     }
 }

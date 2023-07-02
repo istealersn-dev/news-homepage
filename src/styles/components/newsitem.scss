@@ -18,6 +18,11 @@
         color: $almost-white;
         @each $property, $value in $h2 {
             #{$property}: $value;
+
+            &:hover {
+                color: $yellow;
+                cursor: pointer;
+            }
         }
     }
 }
@@ -32,6 +37,11 @@
         color: $dark-space-blue;
         @each $property, $value in $h3 {
             #{$property}: $value;
+
+            &:hover {
+                color: $light-vermillion;
+                cursor: pointer;
+            }
         }
     }
 }
