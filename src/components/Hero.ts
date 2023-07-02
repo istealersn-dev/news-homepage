@@ -21,7 +21,7 @@ const Hero = ({banner, heading, description, CTA}: HeroData) => {
     
     const { desktop, mobile } = banner
 
-    // set default image based on viewport on the intial load
+    // set default image based on viewport
     imageUrl = window.innerWidth > 768 ? desktop : mobile
     image.src = imageUrl
 
