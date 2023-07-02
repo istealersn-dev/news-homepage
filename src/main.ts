@@ -7,7 +7,6 @@ import { fetchData } from "./services/dataService"
 
 import Header from "./components/Header";
 import Hero from "./components/Hero";
-import Hamburger from "./components/Hamburger"
 import Newspace from "./components/Newspace"
 import Related from "./components/Related"
 
@@ -15,67 +14,68 @@ const mainElement = document.createElement('main');
 const appElement = document.querySelector<HTMLDivElement>('#app');
 
 
-// Adds container class to components
-const addContainer = (component: HTMLElement): HTMLElement => {
-  component.classList.add('container')
-  return component
-}
-
-(async() => {
+(async () => {
   try {
     const data = await fetchData()
 
     if (appElement) {
-  
+
       // Header component
-      const hamburgerComponent = Hamburger(data.header)
       const headerComponent = Header(data.header)
-      const mobileMenu = headerComponent.querySelector(".header__nav");
-      const navOpen = headerComponent.querySelector(".header__nav--mobile-menu")
-      const navClose = hamburgerComponent.querySelector(".hamburger__menu--close")
-      if (mobileMenu) {
-          mobileMenu.appendChild(hamburgerComponent);
-      }
+
+      const navOpen = headerComponent.querySelector('.header__nav--hamburger')
+      const navClose = headerComponent.querySelector('.header__nav--items-close')
+      const hamMenu = headerComponent.querySelector('.header__nav--items') as HTMLElement | null
 
       navOpen?.addEventListener('click', () => {
-        console.log('Clicked')
-        hamburgerComponent.classList.toggle('active')
-        hamburgerComponent.removeAttribute('aria-disabled')
+        if (hamMenu) hamMenu.style.display = 'flex'
+        document.body.classList.toggle('freeze')
       })
 
-      navClose?.addEventListener('click', ()=> {
-        hamburgerComponent.classList.toggle('active')
-        hamburgerComponent.setAttribute('aria-disabled', "true")
+      navClose?.addEventListener('click', () => {
+        document.body.classList.toggle('freeze')
+        if (hamMenu) hamMenu.style.display = 'none'
       })
 
-      appElement.appendChild(
-        addContainer(headerComponent)
-      )
+      const renderMenu = () => {
+        const ham = headerComponent.querySelector('.header__nav--items') as HTMLElement | null;
+        const viewport = window.innerWidth;
+
+        if (ham) {
+          if (viewport < 992) {
+            ham.style.display = 'none';
+          } else {
+            ham.style.display = 'flex';
+          }
+        }
+      };
+
+      headerComponent.classList.add('container')
+      appElement.appendChild(headerComponent)
 
       // Hero Component
       const heroComponent = Hero(data.main.hero)
-      mainElement.appendChild(
-        addContainer(heroComponent)
-      )
+      mainElement.appendChild(heroComponent)
 
       //NewSpace component
       const newSpaceComponent = Newspace(data.main.newspace)
-      mainElement.appendChild(
-        addContainer(newSpaceComponent)
-      )
+      mainElement.appendChild(newSpaceComponent)
 
       // Related component
       const relComponent = Related(data.main.related)
-      mainElement.appendChild(
-        addContainer(relComponent)
-      )
+      mainElement.appendChild(relComponent)
+
 
       // Add the main Element
+      mainElement.classList.add('container')
       appElement.appendChild(mainElement)
 
+      window.addEventListener('load', renderMenu)
+      window.addEventListener('resize', renderMenu)
+
     }
-  } catch(error) {
+  } catch (error) {
     console.error('There was a problem fetching the data', error)
-    throw(error)
+    throw (error)
   }
 })();

@@ -1,33 +1,50 @@
-// import Hamburger from "./Hamburger";
-
 import { HeaderData } from "../types";
+import { Div } from "./atoms/Div";
 
-const Header = ({logo, menuIcon}: HeaderData)  => {
+const Header = ({ logo, menuIcon, menuClose, menuItems }: HeaderData) => {
+
     const header = document.createElement("header");
     header.classList.add("header");
 
-    const navItems = document.createElement("nav");
-    navItems.classList.add("header__nav");
+    const nav = document.createElement("nav");
+    nav.classList.add("header__nav");
 
     const navLogo = document.createElement("img");
     navLogo.classList.add("header__nav--logo");
 
-    const mobileMenu = document.createElement("div");
-    mobileMenu.classList.add("header__nav--mobile");
-    mobileMenu.setAttribute('aria-controls', "hamburger-menu")
-    mobileMenu.setAttribute('aria-label', "Toggle menu")
+    const navItems = Div()
+    navItems.classList.add('header__nav--items')
+    const navList = document.createElement('ul')
+    if (menuItems) {
+        menuItems.forEach(menuItem => {
+            const listItem = document.createElement('li')
+            const listLink = document.createElement('a')
 
-    const menuBar = document.createElement("img");
-    menuBar.classList.add("header__nav--mobile-menu");
+            listLink.href = menuItem.link
+            listItem.textContent = menuItem.item
 
-    mobileMenu.appendChild(menuBar);
+            listItem.appendChild(listLink)
+            navList.appendChild(listItem)
+        })
+    }
+
+    const hamburger = document.createElement('img')
+    hamburger.classList.add('header__nav--hamburger')
+
+    const hamburgerClose = document.createElement('img')
+    hamburgerClose.classList.add('header__nav--items-close')
+    hamburgerClose.src = menuClose
 
     navLogo.src = logo
-    menuBar.src = menuIcon
+    hamburger.src = menuIcon
 
-    navItems.appendChild(navLogo);
-    navItems.appendChild(mobileMenu);
-    header.appendChild(navItems);
+    navItems.appendChild(hamburgerClose)
+    navItems.appendChild(navList)
+
+    nav.appendChild(navLogo);
+    nav.appendChild(hamburger)
+    nav.appendChild(navItems);
+    header.appendChild(nav);
 
     return header;
 };

@@ -1,5 +1,12 @@
+@use '../misc/mixins.scss' as *;
+
 .related {
     display: grid;
     grid-template-columns: 1fr;
     gap: 2rem;
+
+    @include respondto('lg') {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 1.875rem;
+    }
 }

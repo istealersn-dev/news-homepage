@@ -1,6 +1,14 @@
+@use '../base/variables.scss' as *;
+@use '../base/typography.scss' as *;
+@use '../misc/mixins.scss' as *;
+
 .header {
     padding-top: 1.75rem;
     position: relative;
+
+    @include respondto('lg') {
+        padding-top: 5.5625rem;
+    }
 
     &__nav {
         display: flex;
@@ -12,6 +20,93 @@
             width: 2.81106rem;
             height: 1.75rem;
             cursor: pointer;
+        }
+
+        &--hamburger {
+            display: block;
+
+            @include respondto('lg') {
+                display: none;
+            }
+        }
+
+        &--items {
+            display: none;
+            flex-direction: column;
+            gap: 5.39rem;
+            height: 100vh;
+            margin-left: -1rem;
+            padding-top: 1.71rem;
+            padding-right: 1.3rem;
+            background: linear-gradient(to left, $almost-white 15rem, rgba(0, 0, 26, 0.5) 6rem);
+            position: absolute;
+            inset: 0;
+
+            color: $gunmetal;
+
+            @include respondto('lg') {
+                display: flex;
+                position: relative;
+                height: auto;
+                background: none;
+                padding: 0;
+            }
+
+            &-close {
+                background-color: $almost-white;
+                width: 1.90038rem;
+                height: 1.90038rem;
+                align-self: flex-end;
+            }
+
+            & > ul {
+                display: flex;
+                flex-direction: column;
+                margin-left: calc(100vw - 16rem);
+                gap: 1.5rem;
+                width: 16rem;
+                height: 100vh;
+                padding: 1.71rem 1.3rem 0 1.5rem;
+                color: $gunmetal;
+
+                @include respondto('lg') {
+                    margin-left: 0;
+                    flex-direction: row;
+                    gap: 2.5rem;
+                    width: auto;
+                    height: auto;
+                    padding: 0;
+                }
+
+                & > li {
+                    font-size: 1.125rem;
+                    line-height: 1.5rem;
+
+                    &:hover {
+                        color: $light-vermillion;
+                        cursor: pointer;
+                    }
+
+                    @include respondto('lg') {
+                        @each $property, $value in $body {
+                            #{$property}: $value;
+                        }
+                    }
+
+                    & > a {
+                            color: $dark-space-blue;
+                            cursor: pointer; 
+                        }
+                }
+            }
+
+            & > img {
+                display: block;
+
+                @include respondto('lg') {
+                    display: none;
+                }
+            }
         }
     }
 }
