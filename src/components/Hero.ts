@@ -24,6 +24,7 @@ const Hero = ({banner, heading, description, CTA}: HeroData) => {
     // set default image based on viewport
     imageUrl = window.innerWidth > 768 ? desktop : mobile
     image.src = imageUrl
+    image.alt = "Hero banner"
 
     // Function to switch image for desktop vs mobile during load/resize
     const updateImage = () => {

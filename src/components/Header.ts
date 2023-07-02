@@ -21,7 +21,7 @@ const Header = ({ logo, menuIcon, menuClose, menuItems }: HeaderData) => {
             const listLink = document.createElement('a')
 
             listLink.href = menuItem.link
-            listItem.textContent = menuItem.item
+            listLink.textContent = menuItem.item
 
             listItem.appendChild(listLink)
             navList.appendChild(listItem)
@@ -34,9 +34,12 @@ const Header = ({ logo, menuIcon, menuClose, menuItems }: HeaderData) => {
     const hamburgerClose = document.createElement('img')
     hamburgerClose.classList.add('header__nav--items-close')
     hamburgerClose.src = menuClose
+    hamburgerClose.alt = "Hamburger menu close icon"
 
     navLogo.src = logo
+    navLogo.alt = "Company logo"
     hamburger.src = menuIcon
+    hamburger.alt = "Hamburger menu icon"
 
     navItems.appendChild(hamburgerClose)
     navItems.appendChild(navList)
