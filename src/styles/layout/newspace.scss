@@ -7,7 +7,7 @@
     padding: 1.5rem 1.25rem 1.5rem 1.31rem;
 
     @include respondto('lg') {
-        padding: 2rem 1.5rem 1.9375rem 1.5rem;
+        padding: 2rem 1.5rem;
     }
 
     &__heading {

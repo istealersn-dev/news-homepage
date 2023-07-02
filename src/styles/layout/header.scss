@@ -47,8 +47,6 @@
             position: absolute;
             inset: 0;
 
-            color: $gunmetal;
-
             @include respondto('lg') {
                 display: flex;
                 position: relative;
@@ -84,23 +82,23 @@
                 }
 
                 & > li {
-                    font-size: 1.125rem;
-                    line-height: 1.5rem;
-
-                    &:hover {
-                        color: $light-vermillion;
-                        cursor: pointer;
-                    }
-
-                    @include respondto('lg') {
-                        @each $property, $value in $body {
-                            #{$property}: $value;
-                        }
-                    }
 
                     & > a {
                             color: $dark-space-blue;
-                            cursor: pointer; 
+                            cursor: pointer;
+                            font-size: 1.125rem;
+                            line-height: 1.5rem;
+
+                            @include respondto('lg') {
+                                color: $gunmetal;
+                                @each $property, $value in $body {
+                                    #{$property}: $value;
+                                }
+                            }
+
+                            &:hover {
+                                color: $light-vermillion;
+                            }
                         }
                 }
             }
