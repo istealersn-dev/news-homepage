@@ -7,8 +7,6 @@
   - [My process](#my-process)
     - [Built with](#built-with)
     - [What I learned](#what-i-learned)
-    - [Continued development](#continued-development)
-    - [Useful resources](#useful-resources)
   - [Author](#author)
 
 
@@ -29,42 +27,23 @@ The core challenge was to use CSS GRID and build the stylesheet for News homepag
 - Live Site URL: [Newsletter Form](https://newsletter-form-green.vercel.app/)
 
 ## My process
-
+I follow some best practices for each of my projects such as:
+- Assessing the project at its entirety
+- Think through on how I would like to approach the build down to the molecular level
+- Accessible & Performant
 ### Built with
 
-- Mobile-first workflow
-- [Next.js](https://nextjs.org/) - React framework with Typescript
-- [Styled Components](https://styled-components.com/) - For styles
-
+- [Vite.js](https://vitejs.dev/) - Vite
+Next Generation Frontend Tooling
+- [Typescript](https://www.typescriptlang.org/) Typescript
+- [Sass](https://sass-lang.com/) - for stylesheet
 
 ### What I learned
-
-In this project, I learned how to implement a functional newsletter subscription form with a success message in React, while also utilizing TypeScript to ensure type safety throughout the project. The main highlight was integrating real-time form validation using regular expressions.
-
-Here is a piece of JavaScript I used for form validation:
-
-```tsx
-    function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
-        e.preventDefault()
-
-        if (emailRegx.test(inputValue)) {
-            setIsSubmitted(true)
-            setInputValue('')
-        } else {
-            setdisValue('block')
-        }
-    }
-```
-This code snippet tests the user's input against a regular expression that matches the pattern of an email address. If the input doesn't match, the error message is displayed.
-
-### Continued development
-
-While I have gained a good understanding of form handling in React and TypeScript, I plan to continue exploring more advanced patterns and use-cases, particularly in relation to form validation and error handling.
-
-### Useful resources
-
-- [Next.JS + Styled Components](https://nextjs.org/docs/app/building-your-application/styling/css-in-js#styled-components) - This helped me understand establishing ServerStylesheet generation by creating a global registry
-
+There are number of things I learned using Typescript:
+1. HTML types where necessary thereby restricting output to HTML elements
+2. CSS Grid
+3. various other event listeners like resize, load, etc.
+4. Building components using Typescript (similar to react)
 ## Author
 
 - Frontend Mentor - [@istealersn-dev](https://www.frontendmentor.io/profile/istealersn-dev)
